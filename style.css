@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --color-orange: hsl(31, 77%, 52%);
+  --color-cyan--dark: hsl(184, 100%, 22%);
+  --color-cyan--veryDark: hsl(179, 100%, 13%);
+  --color-gray: hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
+  --color-white: hsl(0, 0%, 95%); /*(background, headings, buttons))*/
+
+  /* fonts */
+  --font-lexend: "Lexend Deca", sans-serif;
+  --font-bigShoulders: "Big Shoulders Display", cursive;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-white);
+  /* height: 110vh; */
+  position: relative;
+}
+
+.cards {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 7rem;
+}
+.card-sedan {
+  background-color: var(--color-orange);
+}
+.card-suvs {
+  background-color: var(--color-cyan--dark);
+}
+.card-luxury {
+  background-color: var(--color-cyan--veryDark);
+}
+
+.card__img {
+  width: 10rem;
+  height: auto;
+  object-fit: contain;
+}
+.card__heading {
+  font-family: var(--font-bigShoulders);
+  font-size: 5rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  margin: 3rem 0;
+}
+.card__paragraph {
+  font-family: var(--font-lexend);
+  font-size: 2rem;
+  color: var(--color-gray);
+  line-height: 4rem;
+
+  margin-bottom: auto;
+}
+.card__btn,
+.card__btn:visited,
+.card__btn:link {
+  display: block;
+  cursor: pointer;
+
+  align-self: flex-start;
+
+  font-family: var(--font-lexend);
+  font-size: 1.5rem;
+  background-color: var(--color-white);
+  padding: 2rem 5rem;
+  border-radius: 20rem;
+  border: none;
+  transition: all 0.3s;
+}
+.btn-orange {
+  color: var(--color-orange);
+}
+.btn-cyanDark {
+  color: var(--color-cyan--dark);
+}
+.btn-cyanVeryDark {
+  color: var(--color-cyan--veryDark);
+}
+
+.card__btn:hover,
+.card__btn:active {
+  background: transparent;
+  outline: 2px solid var(--color-white);
+  color: var(--color-white);
+}
+
+@media (max-width: 40.625em) /*650*/ {
+  .cards {
+    flex-direction: column;
+  }
+}
